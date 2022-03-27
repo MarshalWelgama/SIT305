@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Unit-Converter</string>
+    <string name ="inputUnit">Enter Unit</string>
+    <string-array name="listMeasurements">
+        <item>Metre</item>
+        <item>Celsius</item>
+        <item>Kilograms</item>
+    </string-array>
 </resources>
