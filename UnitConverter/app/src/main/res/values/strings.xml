@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">Unit-Converter</string>
     <string name ="inputUnit">Enter Unit</string>
+    <string name="measurement_button">Measurement Button</string>
+    <string name="weight_button">Weight Button</string>
+    <string name="temperature_button">Temperature Button</string>
     <string-array name="listMeasurements">
         <item>Metre</item>
         <item>Celsius</item>
         <item>Kilograms</item>
     </string-array>
+    <string name="result1">result</string>
 </resources>
