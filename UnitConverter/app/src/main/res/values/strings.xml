@@ -9,5 +9,5 @@
         <item>Celsius</item>
         <item>Kilograms</item>
     </string-array>
-    <string name="result1">result</string>
+    <string name="result1"></string>
 </resources>
