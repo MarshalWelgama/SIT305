@@ -119,27 +119,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //HELPER FUNCTIONS
-    public void setResult (String val1, String val2, @Nullable String val3){
-        if(val1.length() > 1) {
+    public void setResult (String val1, String val2, String val3){
             result1.setText(val1);
-        }
-        if(val2.length() > 1) {
             result2.setText(val2);
-        }
-        if(val3.length() > 1) {
             result3.setText(val3);
-        }
     }
-    public void setUnit (String val1, String val2, @Nullable String val3){
-        if(val1.length() > 0) {
+    public void setUnit (String val1, String val2, String val3){
             unit1.setText(val1);
-        }
-        if(val2.length() > 0) {
             unit2.setText(val2);
-        }
-        if(val3.length() > 0) {
             unit3.setText(val3);
-        }
     }
 }
 
