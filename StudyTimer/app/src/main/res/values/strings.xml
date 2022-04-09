@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Study Timer</string>
+    <string name="taskLabel">Enter your task:</string>
+    <string name="timerDetail"></string>
+</resources>
