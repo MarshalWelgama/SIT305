@@ -7,23 +7,23 @@
     tools:context=".NewAdvert">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SaveBtn"
         android:layout_width="261dp"
         android:layout_height="46dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="34dp"
         android:text="SAVE"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/LocationField" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/LostRadioBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:text="RadioButton"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton2"
+        android:text="Lost"
+        app:layout_constraintEnd_toStartOf="@+id/FoundRadioBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -38,101 +38,97 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/FoundRadioBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:text="RadioButton"
+        android:layout_marginEnd="52dp"
+        android:text="Found"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/DescriptionField"
         android:layout_width="336dp"
         android:layout_height="75dp"
         android:layout_marginStart="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionLabel" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/DateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
-        android:text="Name:"
+        android:text="Date:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionField" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/DescriptionLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
-        android:text="Name:"
+        android:text="Description"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/PhoneField" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/DateField"
         android:layout_width="339dp"
         android:layout_height="42dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/DateLabel" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/LocationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="4dp"
-        android:text="Name:"
+        android:text="Location"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/DateField" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/LocationField"
         android:layout_width="339dp"
         android:layout_height="42dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/LocationLabel" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/NameField"
         android:layout_width="341dp"
         android:layout_height="42dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/nameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -143,27 +139,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/PhoneField"
         android:layout_width="339dp"
         android:layout_height="42dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/PhoneLabel" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/PhoneLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
-        android:text="Name:"
+        android:text="Phone:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/NameField" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
