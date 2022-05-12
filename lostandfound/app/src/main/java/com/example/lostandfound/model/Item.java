@@ -8,8 +8,7 @@ public class Item {
     private String date;
     private String location;
 
-    public Item(int item_id, String item_name, String phone, String description, String date, String location) {
-        this.item_id = item_id;
+    public Item(String item_name, String phone, String description, String date, String location) {
         this.item_name = item_name;
         this.phone = phone;
         this.description = description;

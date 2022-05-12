@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String CREATE_NOTE_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" + Util.ITEM_ID + "INTEGER PRIMARY KEY AUTOINCREMENT , " + Util.ITEM_NAME + "TEXT" + Util.PHONE + "TEXT" + Util.DESCRIPTION + "TEXT" + Util.DATE + "TEXT" + Util.LOCATION + "TEXT)";
+        String CREATE_NOTE_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" + Util.ITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " + Util.ITEM_NAME + " TEXT, " + Util.PHONE + " TEXT, " + Util.DESCRIPTION + " TEXT, " + Util.DATE + " TEXT, " + Util.LOCATION + " TEXT" + ")";
         sqLiteDatabase.execSQL(CREATE_NOTE_TABLE);
     }
 

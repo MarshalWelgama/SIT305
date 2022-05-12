@@ -1,13 +1,17 @@
 package com.example.lostandfound;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lostandfound.data.DatabaseHelper;
+import com.example.lostandfound.model.Item;
 
 public class NewAdvert extends AppCompatActivity {
     EditText NameField;
@@ -34,9 +38,24 @@ public class NewAdvert extends AppCompatActivity {
             public void onClick(View view) {
                 String name = NameField.getText().toString();
                 String phone = PhoneField.getText().toString();
-                String Description = DescriptionField.getText().toString();
-                String Date = DateField.getText().toString();
-                String Location = LocationField.getText().toString();
+                String description = DescriptionField.getText().toString();
+                String date = DateField.getText().toString();
+                String location = LocationField.getText().toString();
+
+                if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(phone) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(location)) {
+                    long dbItem = db.insertItem(new Item(name,phone,description, date, location));
+                    if (dbItem > 0){
+
+                        Toast.makeText(NewAdvert.this, "Item Saved", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(NewAdvert.this, MainActivity.class);
+                        startActivity(intent);
+                        finish(); //ensures that the back button wont work once saved
+                    } else {
+                        Toast.makeText(NewAdvert.this, "Unexpected Internal Error", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(NewAdvert.this, "All information must be filled", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
