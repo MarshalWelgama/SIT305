@@ -2,13 +2,15 @@ package com.example.lostandfound.model;
 
 public class Item {
     private int item_id;
+    private String type;
     private String item_name;
     private String phone;
     private String description;
     private String date;
     private String location;
 
-    public Item(String item_name, String phone, String description, String date, String location) {
+    public Item(String type, String item_name, String phone, String description, String date, String location) {
+        this.type = type;
         this.item_name = item_name;
         this.phone = phone;
         this.description = description;
@@ -17,6 +19,13 @@ public class Item {
     }
 
     public Item() {
+    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getItem_id() {

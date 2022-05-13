@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String CREATE_NOTE_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" + Util.ITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " + Util.ITEM_NAME + " TEXT, " + Util.PHONE + " TEXT, " + Util.DESCRIPTION + " TEXT, " + Util.DATE + " TEXT, " + Util.LOCATION + " TEXT" + ")";
+        String CREATE_NOTE_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "(" + Util.ITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " + Util.TYPE + " TEXT, " + Util.ITEM_NAME + " TEXT, " + Util.PHONE + " TEXT, " + Util.DESCRIPTION + " TEXT, " + Util.DATE + " TEXT, " + Util.LOCATION + " TEXT" + ")";
         sqLiteDatabase.execSQL(CREATE_NOTE_TABLE);
     }
 
@@ -39,6 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public long insertItem(Item item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(Util.TYPE, item.getType());
         contentValues.put(Util.ITEM_NAME, item.getItem_name());
         contentValues.put(Util.PHONE, item.getPhone());
         contentValues.put(Util.DESCRIPTION, item.getDescription());
@@ -71,11 +72,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         Item obj = new Item();
                         //only one column
                         obj.setItem_id(cursor.getInt(0));
-                        obj.setItem_name(cursor.getString(1));
-                        obj.setPhone(cursor.getString(2));
-                        obj.setDescription(cursor.getString(3));
-                        obj.setDate(cursor.getString(4));
-                        obj.setLocation(cursor.getString(5));
+                        obj.setType(cursor.getString(1));
+                        obj.setItem_name(cursor.getString(2));
+                        obj.setPhone(cursor.getString(3));
+                        obj.setDescription(cursor.getString(4));
+                        obj.setDate(cursor.getString(5));
+                        obj.setLocation(cursor.getString(6));
                         list.add(obj);
                     } while (cursor.moveToNext());
                 }

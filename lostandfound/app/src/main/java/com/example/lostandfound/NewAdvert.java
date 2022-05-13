@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ public class NewAdvert extends AppCompatActivity {
     EditText DateField;
     EditText LocationField;
     Button SaveBtn;
+    RadioGroup typeSelector;
     DatabaseHelper db;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +35,15 @@ public class NewAdvert extends AppCompatActivity {
         DateField = (EditText) findViewById(R.id.DateField);
         LocationField = (EditText) findViewById(R.id.LocationField);
         SaveBtn = (Button) findViewById(R.id.SaveBtn);
+        typeSelector = (RadioGroup) (findViewById(R.id.typeSelector));
 
         SaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RadioButton checkedRadio;
+                int radioId = typeSelector.getCheckedRadioButtonId();
+                checkedRadio = (RadioButton) findViewById(radioId);
+                String type = checkedRadio.getText().toString();
                 String name = NameField.getText().toString();
                 String phone = PhoneField.getText().toString();
                 String description = DescriptionField.getText().toString();
@@ -43,7 +51,7 @@ public class NewAdvert extends AppCompatActivity {
                 String location = LocationField.getText().toString();
 
                 if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(phone) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(location)) {
-                    long dbItem = db.insertItem(new Item(name,phone,description, date, location));
+                    long dbItem = db.insertItem(new Item(type,name,phone,description, date, location));
                     if (dbItem > 0){
 
                         Toast.makeText(NewAdvert.this, "Item Saved", Toast.LENGTH_SHORT).show();
