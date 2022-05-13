@@ -44,7 +44,7 @@ public class ShowAll extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int itemId = i;
-                Intent removeAdIntent = new Intent(ShowAll.this, ShowAll.class);
+                Intent removeAdIntent = new Intent(ShowAll.this, Individual.class);
                 removeAdIntent.putExtra("itemId", itemId);
                 startActivity(removeAdIntent);
                 finish();
